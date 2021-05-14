@@ -6,10 +6,9 @@ import { Component } from "@angular/core";
         <div>
         <h1>Upcoming Angular 2 Event</h1>
         <hr/>
-        <event-thumbnail 
-        (eventClick)="handleEventClicked($event)" 
-        [event] = "event1">
+        <event-thumbnail #thumbnail [event] = "event1">
         </event-thumbnail>
+        <button class="btn btn-primary" (click)="thumbnail.logfoo()">click here to log</button>
         </div>
         `
 })
@@ -29,8 +28,13 @@ export class EventsListcomponent
         
     }
 
-    handleEventClicked(data)
-    {
-        alert('received' + data);
-    }
+
 }   
+
+
+// event handling from child component
+// (eventClick)="handleEventClicked($event)" 
+// handleEventClicked(data)
+// {
+//     alert('received' + data);
+// }

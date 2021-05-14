@@ -13,7 +13,7 @@ import { Component, Input , Output, EventEmitter} from "@angular/core";
                  <div>Location: <span>{{event.location.address}}</span>
                  <span>&nbsp;</span>
                  <span>{{event.location.city}},{{event.location.pin}}</span></div>
-                 <button class="btn btn-primary" (click)="handleClick()">ClickMe</button>
+                 
                  </div>
                  `
 })
@@ -21,11 +21,20 @@ export class EventThumbnailComponent
 {
     @Input() event:any 
 
-    @Output() eventClick = new EventEmitter
-
-    handleClick()
+    logfoo()
     {
-        this.eventClick.emit(this.event.name) 
+        console.log('foo this is veer')
     }
+
 }
 
+
+
+    // event handling or binding
+    // <button class="btn btn-primary" (click)="handleClick()">ClickMe</button> 
+    // @Output() eventClick = new EventEmitter
+
+    // handleClick()
+    // {
+    //     this.eventClick.emit(this.event.name) 
+    // }
