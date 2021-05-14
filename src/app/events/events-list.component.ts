@@ -4,9 +4,12 @@ import { Component } from "@angular/core";
     selector:'events-list',
     template:`
         <div>
-        <h1>Upcoming List</h1>
+        <h1>Upcoming Angular 2 Event</h1>
         <hr/>
-        <event-thumbnail [event] = "event1"></event-thumbnail>
+        <event-thumbnail 
+        (eventClick)="handleEventClicked($event)" 
+        [event] = "event1">
+        </event-thumbnail>
         </div>
         `
 })
@@ -25,4 +28,9 @@ export class EventsListcomponent
         }
         
     }
-}
+
+    handleEventClicked(data)
+    {
+        alert('received' + data);
+    }
+}   

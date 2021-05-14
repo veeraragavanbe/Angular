@@ -1,6 +1,6 @@
 
 import { summaryForJitFileName } from "@angular/compiler/src/aot/util";
-import { Component, Input } from "@angular/core";
+import { Component, Input , Output, EventEmitter} from "@angular/core";
 
 @Component ({
     selector: 'event-thumbnail',    
@@ -21,9 +21,11 @@ export class EventThumbnailComponent
 {
     @Input() event:any 
 
+    @Output() eventClick = new EventEmitter
+
     handleClick()
     {
-        alert('Hello');
+        this.eventClick.emit(this.event.name) 
     }
 }
 
