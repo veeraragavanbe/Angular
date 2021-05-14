@@ -14,13 +14,15 @@ export class EventsListcomponent
 {
     event1 =  {
         id:1,
-        name: 'veeraiyan',
-        age: 22,
+        name: 'Angular connect',
+        date: '14/05/2021',
+        time: '9.30',
+        price: 150.50,
         location:{
             address: 'chinthamani',
             city: 'trichy', 
             pin: 620002
-        },
-        time: '9.30'
+        }
+        
     }
 }
