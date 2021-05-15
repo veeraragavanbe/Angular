@@ -7,7 +7,7 @@ import { Component, Input} from "@angular/core";
                  <h2>{{event?.name}}</h2>
                  <div>Id: {{event?.id}}</div>
                  <div>Date: {{event?.date}}</div>
-                 <div [class.green]="event?.time === '8.00 am'" [ngSwitch] = "event?.time">
+                 <div [ngStyle]="{'color': event?.time === '8.00 am' ? 'bold' : 'normal'}" [ngSwitch] = "event?.time">
                     Time: {{event?.time}}
                     <span *ngSwitchCase="'8:00 am'">(Early start)</span>
                     <span *ngSwitchCase="'10:00 am'">(Late start)</span>
@@ -37,13 +37,7 @@ export class EventThumbnailComponent
 {
     @Input() event:any 
 
-    // getStartClass()
-    // {
-    //     if(this.event && this.event.time === '8.00 am')
-    //         return 'green bold'
-    //     return '' 
-        
-    // }
+
 
 }
 
@@ -74,3 +68,13 @@ export class EventThumbnailComponent
     //  ? before event helps to run code without error. if the data not binded or present in array
     // another way to hidding
     // <div [hidden] = "!event?.location">
+
+    
+    // styling element using function
+    // getStartClass()
+    // {
+    //     if(this.event && this.event.time === '8.00 am')
+    //         return 'green bold'
+    //     return '' 
+        
+    // }
