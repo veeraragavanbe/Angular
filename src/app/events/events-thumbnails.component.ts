@@ -4,7 +4,7 @@ import { Component, Input} from "@angular/core";
 
 @Component ({
     selector: 'event-thumbnail',    
-    template: `  <div class="well thumbnail">
+    template: `  <div [routerLink]="['/events', event.id]" class="well thumbnail">
             
                  <h2>{{event?.name}}</h2>
                  <div>Id: {{event?.id}}</div>
@@ -63,7 +63,9 @@ export class EventThumbnailComponent
 
 
     // used to hide the value if it not present in data arrary or object
+
     // *ngIf="event?.location"   ==== if the location not present in the array it just hide that element
+    
     //  ? before event helps to run code without error. if the data not binded or present in array
     // another way to hidding
     // <div [hidden] = "!event?.location">
