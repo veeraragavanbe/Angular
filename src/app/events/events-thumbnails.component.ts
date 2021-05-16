@@ -1,12 +1,14 @@
+import { templateJitUrl } from "@angular/compiler";
 import { summaryForJitFileName } from "@angular/compiler/src/aot/util";
 import { Component, Input} from "@angular/core";
 
 @Component ({
     selector: 'event-thumbnail',    
     template: `  <div class="well thumbnail">
+            
                  <h2>{{event?.name}}</h2>
                  <div>Id: {{event?.id}}</div>
-                 <div>Date: {{event?.date}}</div>
+                 <div >Date: {{event?.date}}</div>
                  <div [ngStyle]="{'color': event?.time === '8.00 am' ? 'bold' : 'normal'}" [ngSwitch] = "event?.time">
                     Time: {{event?.time}}
                     <span *ngSwitchCase="'8:00 am'">(Early start)</span>
@@ -35,10 +37,7 @@ import { Component, Input} from "@angular/core";
 })
 export class EventThumbnailComponent
 {
-    @Input() event:any 
-
-
-
+    @Input() event:any     
 }
 
 

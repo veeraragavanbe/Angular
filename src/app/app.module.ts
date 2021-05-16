@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { Router, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { EventsAppComponent } from './events-app.component';
 import { EventsListcomponent} from './events/events-list.component';
 import { EventThumbnailComponent} from './events/events-thumbnails.component';
