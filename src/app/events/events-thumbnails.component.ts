@@ -1,7 +1,7 @@
 import { templateJitUrl } from "@angular/compiler";
 import { summaryForJitFileName } from "@angular/compiler/src/aot/util";
 import { Component, Input} from "@angular/core";
-
+import { IEvent } from "./shared/event.model";
 @Component ({
     selector: 'event-thumbnail',    
     template: `  <div [routerLink]="['/events', event.id]" class="well thumbnail">
@@ -18,7 +18,7 @@ import { Component, Input} from "@angular/core";
                  <div>Price: \${{event?.price}}</div>
                  <div [hidden] = "!event?.location"  >
                       <span>Location:{{event?.location?.address}}</span>
-                 <span class="pad-lef">{{event?.location?.city}},{{event?.location?.pin}}</span>
+                 <span class="pad-lef">{{event?.location?.city}},{{event?.location?.country}}</span>
                 </div>
                  <div [hidden] = "!event?.OnlineUrl">
                      Online Url: {{ event.OnlineUrl}}
@@ -37,7 +37,7 @@ import { Component, Input} from "@angular/core";
 })
 export class EventThumbnailComponent
 {
-    @Input() event:any     
+    @Input() event:IEvent   
 }
 
 
