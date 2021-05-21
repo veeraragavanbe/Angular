@@ -23,6 +23,7 @@ export class LoginComponent{
         this.router.navigate(['/events'])
     }   
 
+   
     cancel()
     {
         this.router.navigate(['/events'])
